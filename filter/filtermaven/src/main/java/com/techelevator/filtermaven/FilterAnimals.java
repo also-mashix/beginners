@@ -12,7 +12,7 @@ public class FilterAnimals {
 		a.add(new Herbivore("Rabbit", 4));
 		a.add(new Herbivore("Giraffe", 4));
 		a.add(new Herbivore("Rhino", 4));
-		a.add(new Herbivore("Spider", 8));
+		a.add(new Carnivore("Spider", 8));
 		a.add(new Herbivore("Horse", 4));
 		a.add(new Carnivore("Puma", 4));
 		a.add(new Carnivore("Shark", 0));
@@ -27,9 +27,22 @@ public class FilterAnimals {
 		List<Omnivore> omnivores = new ArrayList<Omnivore>();
 		
 		
+		
+		
 		for (int i = 0; i < a.size(); i++) {
-			String aType = a.get(i).getType;
+			if (a.get(i).toString().contentEquals("Herbivore")) {
+				herbivores.add((Herbivore) a.get(i));
+			} else if (a.get(i).toString().contentEquals("Carnivore")) {
+				carnivores.add((Carnivore) a.get(i));
+			} else if (a.get(i).toString().contentEquals("Omnivore")) {
+				omnivores.add((Omnivore) a.get(i));
+			} else {
+				System.out.println(a.get(i).getName() + " has an ERROR being filtered and toString reads: " + a.get(i).toString());
+			}
+			
+			System.out.println("The animal " + a.get(i).getName() + " is a(n) " + a.get(i).toString() + ".");
 		}
+		
 		
 
 	} 
